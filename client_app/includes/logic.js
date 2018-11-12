@@ -1,21 +1,22 @@
-// jQuery.each( [ "put", "delete" ], function( i, method ) {
-//     jQuery[ method ] = function( url, data, callback, type ) {
-//       if ( jQuery.isFunction( data ) ) {
-//         type = type || callback;
-//         callback = data;
-//         data = undefined;
-//       }
+function uncheck() {
+    if (document.getElementById('funcMult').checked) {
+        document.getElementById('funcMult').checked = false;
+    }
+    if (document.getElementById('funcSum').checked) {
+        document.getElementById('funcSum').checked = false;
+    }
+    if (document.getElementById('funcAvg').checked) {
+        document.getElementById('funcAvg').checked = false;
+    }
+    if (document.getElementById('get').checked)
+        document.getElementById('get').checked = false;
 
-//       return jQuery.ajax({
-//         url: url,
-//         type: method,
-//         dataType: type,
-//         data: data,
-//         success: callback
-//       });
-//     };
-//   });
+    if (document.getElementById('put').checked)
+        document.getElementById('put').checked = false;
 
+    if (document.getElementById('post').checked)
+        document.getElementById('post').checked = false;
+}
 
 window.addEventListener('load', function () {
     document.getElementById('button').onclick = function() {
@@ -43,7 +44,7 @@ window.addEventListener('load', function () {
             var dataCombined = "num1=" + num1Val + "&" + "num2=" + num2Val + "&" + "num3=" + num3Val + "&" +"func=" + funcVal;
             console.log(dataCombined);
             $.ajax({
-                url: '../service_calculator/calculator.php',
+                url: 'http://shenkar.html5-book.co.il/2018-2019/dcs/dev_23/service_calculator/calculator.php',
                 type: 'PUT',
                 data: dataCombined,
                 success: function(data) {
@@ -51,19 +52,10 @@ window.addEventListener('load', function () {
                     console.log( "Return data: " + data.retVal);
                 }
             });
-
-
-
-            // $.put('../service_calculator/calculator.php',
-            // {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
-            //  function(data){
-            //         c$(".result").append(data.retVal);
-            //         console.log( "Return data: " + data.retVal);
-            // })
         }
         if(document.getElementById('get').checked) {
             $.get(
-                "../service_calculator/calculator.php",
+                "http://shenkar.html5-book.co.il/2018-2019/dcs/dev_23/service_calculator/calculator.php",
                 {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
                 function(data) {
 
@@ -71,12 +63,9 @@ window.addEventListener('load', function () {
                     console.log( "Return data: " + data.retVal);
                 }
             );
-
-
-
         }
         if(document.getElementById('post').checked) {
-            $.post("../service_calculator/calculator.php",
+            $.post("http://shenkar.html5-book.co.il/2018-2019/dcs/dev_23/service_calculator/calculator.php",
                 {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
                 function( data ) {
 
@@ -84,28 +73,7 @@ window.addEventListener('load', function () {
                     console.log( "Return data: " + data.retVal);
                 });
         }
-
-        if(document.getElementById('get').checked)
-            document.getElementById('get').checked = false;
-
-        if(document.getElementById('put').checked)
-            document.getElementById('put').checked = false;
-
-        if(document.getElementById('post').checked)
-            document.getElementById('post').checked = false;
-
-        if(document.getElementById('funcMult').checked) {
-            document.getElementById('funcMult').checked = false;
-        }
-        if(document.getElementById('funcSum').checked) {
-            document.getElementById('funcSum').checked = false;
-        }
-        if(document.getElementById('funcAvg').checked) {
-            document.getElementById('funcAvg').checked = false;
-        }
-
-
-
+        uncheck();
     };
 
 
@@ -116,23 +84,7 @@ window.addEventListener('load', function () {
         document.getElementById('num1').value = 0;
         document.getElementById('num2').value = 0;
         document.getElementById('num3').value = 0;
-        if(document.getElementById('funcMult').checked) {
-            document.getElementById('funcMult').checked = false;
-        }
-        if(document.getElementById('funcSum').checked) {
-            document.getElementById('funcSum').checked = false;
-        }
-        if(document.getElementById('funcAvg').checked) {
-            document.getElementById('funcAvg').checked = false;
-        }
-        if(document.getElementById('get').checked)
-            document.getElementById('get').checked = false;
-
-        if(document.getElementById('put').checked)
-            document.getElementById('put').checked = false;
-
-        if(document.getElementById('post').checked)
-            document.getElementById('post').checked = false;
+        uncheck();
 
     }
 
