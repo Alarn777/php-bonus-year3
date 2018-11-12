@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Client</title>
-    <script src="includes/style.css"></script>
+    <link rel="stylesheet" href="includes/style.css">
     <script src="includes/logic.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -13,29 +13,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div class="calculator-box">
+    <div class="input-box">
+        <div class="form-group">
+            <label for="num1">First number:</label>
+            <input type="number" class="form-control" id="num1" value="0">
+        </div>
+        <div class="form-group">
+            <label for="num2">Second number:</label>
+            <input type="number" class="form-control" id="num2" value="0">
+        </div>
+        <div class="form-group">
+            <input type="radio" name="func" id="funcSum" value="sum">Plus
+            <input type="radio" name="func" id="funcMult" value="mult">Multiply
+            <input type="radio" name="func" id="funcAvg" value="avg">Average
+        </div>
+        <div class="form-group">
+            <section id="result" class="result"> Result: </section>
+        </div>
 
-    <form name=”calculator”>
-        <p> First number: </p><input name="first_number" >
-        <p> Operation: </p><input name="operation">
-        <p> Second number: </p><input name="second_number">
-        <p> Result: </p><input name="result">
 
-    </form>
+        <button class="btn btn-primary" id="button">Calculate</button>
+        <button class="btn btn-primary" id="clear">Clear</button>
+    </div>
 
-
-
-<!--<section class="result">Result: </section>-->
-<script>
-    (function () {
-        // POST:
-        $.post("http://localhost:8888/tragil2.php",
-            {func:"sum",num1:10,num2:15,num3:20},
-            function( data ) {
-
-                $(".result").append(data.retVal);
-                console.log( "Return data: " + data.retVal);
-            });
-    })();
-</script>
+</div>
 </body>
 </html>

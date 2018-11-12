@@ -1,58 +1,137 @@
 <?php
-if(isset($_GET['num1'])) // receive data via GET
-    $num1 = (int)$_GET["num1"]; // convert String to Integer
-else if(isset($_POST['num1'])) // receive data via POST
-    $num1 = (int)$_POST["num1"]; // convert String to Integer
-else $num1 = 50; // if not set=>default will be 50. BTW, if not set, it will be 0.
 
-if(isset($_GET['num2'])) $num2 = (int)$_GET["num2"];
-else if(isset($_POST['num2'])) $num2 = (int)$_POST["num2"];
-else $num2 = 50;
 
-if(isset($_GET['num3'])) $num3 = (int)$_GET["num3"];
-else if(isset($_POST['num3'])) $num3 = (int)$_POST["num3"];
-else $num3 = 50;
 
-if(isset($_GET['num4'])) $num4 = (int)$_GET["num4"];
-else if(isset($_POST['num4'])) $num4 = (int)$_POST["num4"];
-else $num4 = 50;
+class DataManipulations {
+    public $func;
+    public $num1;
+    public $num2;
+    public $retVal;
+    public function checkFunc(){
 
-$sum = $num1 + $num2 + $num3 + $num4; // calculations
-$avg = ($num1 + $num2 + $num3 + $num4) / 4;
-$mult = $num1 * $num2 * $num3 * $num4;
 
-$a = array('avg'=>$avg, 'sum'=>$sum, 'mult'=>$mult); // build the results Array
 
-header('Content-Type: application/json'); // set header for json response
-echo json_encode($a); // echo the converted JSON Object from the Array
+        if($this->func == 'sum') {
+            $this->retVal = $this->sumData($this->num1,$this->num2);
+        }
+        else if($this->func == 'avg') {
+            $this->retVal = $this->avgOnData($this->num1,$this->num2);
+        }
+        else if($this->func == 'mult') {
+            $this->retVal = $this->multData($this->num1,$this->num2);
+        }
+        else {return print ('Error, no valid function');}
+
+
+    }
+
+
+    private function sumData($num1,$num2)
+    {
+        return $res = $num1 + $num2;
+    }
+    private function multData($num1,$num2)
+    {
+        return $res = $num1 * $num2;
+    }
+    private function avgOnData($num1,$num2)
+    {
+        return $res = ($num1 + $num2)/2;
+    }
+
+    public function setData($num1,$num2,$func){
+        $this->num2 = $num2;
+        $this->num1 = $num1;
+        $this->func = $func;
+    }
+    public function returnResult(){
+        $a = array('retVal'=> $this->retVal);
+        header('Content-Type: application/json');
+        echo json_encode($a);
+    }
+
+
+
+}
+
+class Get {
+    public $num1;
+    public $num2;
+    public $func;
+
+    public function checkIfGet(){
+        if(isset($_GET['num1']) && isset($_GET['num2']) && isset($_GET['func'])){
+            $this->num2 = (int)$_GET["num2"];
+            $this->num1 = (int)$_GET["num1"];
+            $this->func = $_GET["func"];
+            return True;
+        }
+        else
+            return False;
+
+    }
+
+
+
+
+}
+
+
+
+class Post{
+    public $num1;
+    public $num2;
+    public $func;
+
+    public function checkIfPost(){
+        if(isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['func'])){
+            $this->num2 = (int)$_POST["num2"];
+            $this->num1 = (int)$_POST["num1"];
+            $this->func = $_POST["func"];
+            return True;
+        }
+        else
+            return False;
+
+    }
+
+}
+
+
+class Put {
+    public $num1;
+    public $num2;
+    public $func;
+
+    public function checkIfPut(){
+        if(isset($_PUT['num1']) && isset($_PUT['num2']) && isset($_PUT['func'])){
+            return True;
+        }
+        else
+            return False;
+
+    }
+
+}
+
+$getvar = new Get();
+$postvar = new Post();
+$putvar = new Put();
+$data = new DataManipulations();
+$putvar = new Put();
+// if($putvar->checkIfPut())
+//     $data->setData($putvar->num1,$putvar->num2,$putvar->func);
+
+
+if($postvar->checkIfPost()){
+    $data->setData($postvar->num1,$postvar->num2,$postvar->func);
+}
+
+if($getvar->checkIfGet())
+    $data->setData($getvar->num1,$getvar->num2,$getvar->func);
+
+
+$data->checkFunc();
+$data->returnResult();
 
 ?>
-
-
-
-
-<?php
-//$num1 = (int)$_POST['num1'];
-//$num2 = (int)$_POST['num2'];
-//$num3 = (int)$_POST['num3'];
-//$num4 = (int)$_POST['num4'];
-//$func = $_POST['func'];
-//
-//if($func == 'sum') {
-//    $res = $num1 + $num2 + $num3 + $num4;
-//}
-//else if($func == 'avg') {
-//    $res = $num1 + $num2 + $num3 + $num4;
-//    $res = $res/4;
-//}
-//else if($func == 'mult') {
-//    $res = $num1 * $num2 * $num3 * $num4;
-//}
-//else {return print ('Error, no valid function');}
-//
-//$a = array('retVal'=> $res);
-//header('Content-Type: application/json');
-//echo json_encode($a);
-//
-//
-//?>

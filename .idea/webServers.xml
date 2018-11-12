@@ -2,10 +2,10 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="afbfc9ee-db1a-4885-ab22-f6ca57cfda54" name="Yonit" url="http://html5-book.co.il">
-        <fileTransfer host="html5-book.co.il" port="21">
+      <webServer id="c64e11db-aef0-4de6-9801-71b5ec3f5e19" name="Yonit" url="http://shenkar.html5-book.co.il/">
+        <fileTransfer host="shenkar.html5-book.co.il" port="21">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

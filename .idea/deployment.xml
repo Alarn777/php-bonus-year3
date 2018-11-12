@@ -5,7 +5,7 @@
       <paths name="Yonit">
         <serverdata>
           <mappings>
-            <mapping deploy="/2018-2019/dcs/dev_23" local="$PROJECT_DIR$" web="" />
+            <mapping deploy="/dev_23" local="$PROJECT_DIR$" web="/2018-2019/dcs" />
           </mappings>
         </serverdata>
       </paths>
