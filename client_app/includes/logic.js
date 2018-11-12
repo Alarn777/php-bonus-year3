@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
         {
             deleteElement.childNodes[1].remove()
         }
-        $.post("http://localhost:8888/service_calculator/calculator.php",
+        $.post("../service_calculator/calculator.php",
             {func:funcVal,num1:num1Val,num2:num2Val},
             function( data ) {
 
