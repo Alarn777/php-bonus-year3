@@ -1,16 +1,11 @@
 <?php
-
-
-
 class DataManipulations {
     public $func;
     public $num1;
     public $num2;
     public $retVal;
+
     public function checkFunc(){
-
-
-
         if($this->func == 'sum') {
             $this->retVal = $this->sumData($this->num1,$this->num2);
         }
@@ -21,19 +16,18 @@ class DataManipulations {
             $this->retVal = $this->multData($this->num1,$this->num2);
         }
         else {return print ('Error, no valid function');}
-
-
     }
-
 
     private function sumData($num1,$num2)
     {
         return $res = $num1 + $num2;
     }
+
     private function multData($num1,$num2)
     {
         return $res = $num1 * $num2;
     }
+
     private function avgOnData($num1,$num2)
     {
         return $res = ($num1 + $num2)/2;
@@ -44,14 +38,12 @@ class DataManipulations {
         $this->num1 = $num1;
         $this->func = $func;
     }
+
     public function returnResult(){
         $a = array('retVal'=> $this->retVal);
         header('Content-Type: application/json');
         echo json_encode($a);
     }
-
-
-
 }
 
 class Get {
@@ -68,15 +60,8 @@ class Get {
         }
         else
             return False;
-
     }
-
-
-
-
 }
-
-
 
 class Post{
     public $num1;
@@ -92,11 +77,8 @@ class Post{
         }
         else
             return False;
-
     }
-
 }
-
 
 class Put {
     public $num1;
@@ -104,14 +86,16 @@ class Put {
     public $func;
 
     public function checkIfPut(){
-        if(isset($_PUT['num1']) && isset($_PUT['num2']) && isset($_PUT['func'])){
+        if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+            parse_str(file_get_contents("php://input"),$post_vars);
+            $this->num1 = $post_vars[num1];
+            $this->num2 = $post_vars[num2];
+            $this->func = $post_vars[func];
             return True;
         }
         else
             return False;
-
     }
-
 }
 
 $getvar = new Get();
@@ -119,19 +103,16 @@ $postvar = new Post();
 $putvar = new Put();
 $data = new DataManipulations();
 $putvar = new Put();
-// if($putvar->checkIfPut())
-//     $data->setData($putvar->num1,$putvar->num2,$putvar->func);
 
+if($putvar->checkIfPut())
+    $data->setData($putvar->num1,$putvar->num2,$putvar->func);
 
-if($postvar->checkIfPost()){
+if($postvar->checkIfPost())
     $data->setData($postvar->num1,$postvar->num2,$postvar->func);
-}
 
 if($getvar->checkIfGet())
     $data->setData($getvar->num1,$getvar->num2,$getvar->func);
 
-
 $data->checkFunc();
 $data->returnResult();
-
 ?>
