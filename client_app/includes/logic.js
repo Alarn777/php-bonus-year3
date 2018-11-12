@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
         var funcVal = "";
         var num1Val = document.getElementById('num1').value;
         var num2Val = document.getElementById('num2').value;
+        var num3Val = document.getElementById('num3').value;
         if(document.getElementById('funcMult').checked) {
             funcVal = "mult";
         }
@@ -19,7 +20,7 @@ window.addEventListener('load', function () {
             deleteElement.childNodes[1].remove()
         }
         $.post("../service_calculator/calculator.php",
-            {func:funcVal,num1:num1Val,num2:num2Val},
+            {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
             function( data ) {
 
                 $(".result").append(data.retVal);
@@ -38,7 +39,7 @@ window.addEventListener('load', function () {
 
 
 
-    }
+    };
 
 
     document.getElementById('clear').onclick = function() {
@@ -47,6 +48,7 @@ window.addEventListener('load', function () {
             deleteElement.childNodes[1].remove();
         document.getElementById('num1').value = 0;
         document.getElementById('num2').value = 0;
+        document.getElementById('num3').value = 0;
         if(document.getElementById('funcMult').checked) {
             document.getElementById('funcMult').checked = false;
         }
