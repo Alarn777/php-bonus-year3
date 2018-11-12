@@ -1,3 +1,21 @@
+// jQuery.each( [ "put", "delete" ], function( i, method ) {
+//     jQuery[ method ] = function( url, data, callback, type ) {
+//       if ( jQuery.isFunction( data ) ) {
+//         type = type || callback;
+//         callback = data;
+//         data = undefined;
+//       }
+
+//       return jQuery.ajax({
+//         url: url,
+//         type: method,
+//         dataType: type,
+//         data: data,
+//         success: callback
+//       });
+//     };
+//   });
+
 
 window.addEventListener('load', function () {
     document.getElementById('button').onclick = function() {
@@ -19,13 +37,62 @@ window.addEventListener('load', function () {
         {
             deleteElement.childNodes[1].remove()
         }
-        $.post("../service_calculator/calculator.php",
-            {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
-            function( data ) {
 
-                $(".result").append(data.retVal);
-                console.log( "Return data: " + data.retVal);
+
+        if(document.getElementById('put').checked) {
+            var dataCombined = "num1=" + num1Val + "&" + "num2=" + num2Val + "&" + "num3=" + num3Val + "&" +"func=" + funcVal;
+            console.log(dataCombined);
+            $.ajax({
+                url: '../service_calculator/calculator.php',
+                type: 'PUT',
+                data: dataCombined,
+                success: function(data) {
+                    $(".result").append(data.retVal);
+                    console.log( "Return data: " + data.retVal);
+                }
             });
+
+
+
+            // $.put('../service_calculator/calculator.php',
+            // {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
+            //  function(data){
+            //         c$(".result").append(data.retVal);
+            //         console.log( "Return data: " + data.retVal);
+            // })
+        }
+        if(document.getElementById('get').checked) {
+            $.get(
+                "../service_calculator/calculator.php",
+                {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
+                function(data) {
+
+                    $(".result").append(data.retVal);
+                    console.log( "Return data: " + data.retVal);
+                }
+            );
+
+
+
+        }
+        if(document.getElementById('post').checked) {
+            $.post("../service_calculator/calculator.php",
+                {func:funcVal,num1:num1Val,num2:num2Val,num3:num3Val},
+                function( data ) {
+
+                    $(".result").append(data.retVal);
+                    console.log( "Return data: " + data.retVal);
+                });
+        }
+
+        if(document.getElementById('get').checked)
+            document.getElementById('get').checked = false;
+
+        if(document.getElementById('put').checked)
+            document.getElementById('put').checked = false;
+
+        if(document.getElementById('post').checked)
+            document.getElementById('post').checked = false;
 
         if(document.getElementById('funcMult').checked) {
             document.getElementById('funcMult').checked = false;
@@ -58,6 +125,15 @@ window.addEventListener('load', function () {
         if(document.getElementById('funcAvg').checked) {
             document.getElementById('funcAvg').checked = false;
         }
+        if(document.getElementById('get').checked)
+            document.getElementById('get').checked = false;
+
+        if(document.getElementById('put').checked)
+            document.getElementById('put').checked = false;
+
+        if(document.getElementById('post').checked)
+            document.getElementById('post').checked = false;
+
     }
 
 

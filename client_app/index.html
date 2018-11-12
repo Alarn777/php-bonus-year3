@@ -27,9 +27,21 @@
             <input type="number" class="form-control" id="num3" value="0">
         </div>
         <div class="form-group">
-            <input type="radio" name="func" id="funcSum" value="sum">Plus
-            <input type="radio" name="func" id="funcMult" value="mult">Multiply
-            <input type="radio" name="func" id="funcAvg" value="avg">Average
+            <label for="httpVerb"><p>Choose http verb:</p>
+                <input type="radio" name="httpVerb" id="put" value="sum"> PUT
+                <input type="radio" name="httpVerb" id="get" value="mult"> GET
+                <input type="radio" name="httpVerb" id="post" value="avg"> POST
+            </label>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="funcSum"><p>Choose math operation:</p>
+                <input type="radio" name="func" id="funcSum" value="sum"> Plus
+                <input type="radio" name="func" id="funcMult" value="mult"> Multiply
+                <input type="radio" name="func" id="funcAvg" value="avg"> Average
+            </label>
         </div>
         <div class="form-group">
             <section id="result" class="result"> Result: </section>
