@@ -13,12 +13,16 @@ window.addEventListener('load', function () {
         if(document.getElementById('funcAvg').checked) {
             funcVal = "avg";
         }
+        var deleteElement = document.getElementById('result');
+        for (var i = deleteElement.childNodes.length ;deleteElement.childNodes.length > 1;i++)
+        {
+            deleteElement.childNodes[1].remove()
+        }
         $.post("http://localhost:8888/service_calculator/calculator.php",
             {func:funcVal,num1:num1Val,num2:num2Val},
             function( data ) {
 
                 $(".result").append(data.retVal);
-                $(".result").
                 console.log( "Return data: " + data.retVal);
             });
 
