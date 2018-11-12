@@ -78,7 +78,7 @@ class Post{
         if(isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['func'])){
             $this->num2 = (int)$_POST["num2"];
             $this->num1 = (int)$_POST["num1"];
-            $this->num3 = (int)$_GET["num3"];
+            $this->num3 = (int)$_POST["num3"];
             $this->func = $_POST["func"];
             return True;
         }

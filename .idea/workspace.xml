@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="adacf097-486c-4992-bcd4-aa037d8d1182" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client_app/includes/logic.js" afterPath="$PROJECT_DIR$/client_app/includes/logic.js" />
+      <change beforePath="$PROJECT_DIR$/client_app/index.html" afterPath="$PROJECT_DIR$/client_app/index.html" />
       <change beforePath="$PROJECT_DIR$/service_calculator/calculator.php" afterPath="$PROJECT_DIR$/service_calculator/calculator.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,21 +29,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="calculator.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service_calculator/calculator.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client_app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="265">
+              <caret line="26" column="60" lean-forward="true" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logic.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calculator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service_calculator/calculator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logic.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client_app/includes/logic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="-170">
+              <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -72,11 +82,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/client_app/index.html" />
         <option value="$PROJECT_DIR$/client_app/includes/style.css" />
         <option value="&lt;c64e11db-aef0-4de6-9801-71b5ec3f5e19&gt;/dev_23/index.html" />
         <option value="&lt;c64e11db-aef0-4de6-9801-71b5ec3f5e19&gt;/dev_23/client_app/includes/logic.js" />
         <option value="$PROJECT_DIR$/client_app/includes/logic.js" />
+        <option value="$PROJECT_DIR$/client_app/index.html" />
         <option value="$PROJECT_DIR$/service_calculator/calculator.php" />
       </list>
     </option>
@@ -122,12 +132,6 @@
               <item name="php-bonus-year3" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-bonus-year3" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client_app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="php-bonus-year3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-bonus-year3" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client_app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="php-bonus-year3" type="b2602c69:ProjectViewProjectNode" />
@@ -191,7 +195,7 @@
       <workItem from="1541765438604" duration="7048000" />
       <workItem from="1541776448697" duration="2444000" />
       <workItem from="1541808614445" duration="194000" />
-      <workItem from="1542009235385" duration="7187000" />
+      <workItem from="1542009235385" duration="7907000" />
     </task>
     <task id="LOCAL-00001" summary="Start of work">
       <created>1541765538045</created>
@@ -228,11 +232,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542039767992</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Done">
+      <created>1542052574005</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542052574005</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Done">
+      <created>1542052683226</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542052683226</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19816000" />
+    <option name="totallyTimeSpent" value="20536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="0" />
@@ -446,14 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client_app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -462,18 +472,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service_calculator/calculator.php">
+    <entry file="file://$PROJECT_DIR$/client_app/includes/logic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="-170">
+          <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client_app/includes/logic.js">
+    <entry file="file://$PROJECT_DIR$/client_app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="265">
+          <caret line="26" column="60" lean-forward="true" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service_calculator/calculator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
           <folding />
         </state>
       </provider>
